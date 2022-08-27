@@ -1,7 +1,8 @@
 #include <iostream>
 #include <stack>
+#include <string>
 
-std::stack<char> st;
+std::stack<int> st;
 
 int main(){
     
@@ -36,18 +37,35 @@ void minus(){
     st.push(val2 - val1);
 }
 
-void r(char val[]){
-
+void r(){
+    std::string str;
+    std::cout << "Veuillez entrer un string: ";
+    std::cin >> str;
+    for (size_t i = str.length(); i > 0; i--)
+    {
+        st.push(str[i]);
+    }
+    st.push(str.length());
+    std::cout << "Valeur ajoutée au stack" << std::endl;
 }
 
 void R(){
     int val;
+    std::cout << "Veuillez entrer un nombre: ";
     std::cin >> val;
+    std::cout << "Valeur ajoutée au stack" << std::endl;
     st.push(val);
 }
 
 void w(){
-    
+    int val = st.top();
+    st.pop();
+    for (size_t i = 0; i < val; i++)
+    {
+        char lettre = st.top();
+        std::cout << lettre;
+        st.pop();
+    }
 }
 
 void W(){
@@ -55,6 +73,9 @@ void W(){
     st.pop();
 }
 
-void Z(){
-
+void z(){
+    int val1 = std::rand();
+    int val2 = std::rand();
+    st.push(val1);
+    st.push(val2);
 }
