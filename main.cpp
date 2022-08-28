@@ -5,7 +5,22 @@
 std::stack<int> st;
 
 int main(){
-    
+    std::string str;
+    std::cout << "Veuillez entrer votre commande: ";
+    std::cin >> str;
+    std::cout << "Calcul en cours..." << std::endl;
+    for (size_t i = 0; i < str.length(); i++)
+    {
+        if (isalpha(str[i]))
+        {
+            
+        }
+        else
+        {
+            
+        }
+    }
+    std::cout << "Fini!" << std::endl;
     return 0;
 }
 
