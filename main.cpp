@@ -4,26 +4,6 @@
 
 std::stack<int> st;
 
-int main(){
-    std::string str;
-    std::cout << "Veuillez entrer votre commande: ";
-    std::cin >> str;
-    std::cout << "Calcul en cours..." << std::endl;
-    for (size_t i = 0; i < str.length(); i++)
-    {
-        if (isalpha(str[i]))
-        {
-            
-        }
-        else
-        {
-            
-        }
-    }
-    std::cout << "Fini!" << std::endl;
-    return 0;
-}
-
 void P(int val){
     st.push(val);
 }
@@ -94,3 +74,73 @@ void z(){
     st.push(val1);
     st.push(val2);
 }
+
+int main(){
+    std::string str;
+    std::cout << "Veuillez entrer votre commande: ";
+    std::cin >> str;
+    std::cout << "Calcul en cours..." << std::endl;
+    for (size_t i = 0; i < str.length(); i++)
+    {
+        if (isalpha(str[i]) && str[i] != 'P')
+        {
+            switch (str[i])
+            {
+                case 'p':
+                    p();
+                    break;
+                case 'd':
+                    d();
+                    break;
+                case 'r':
+                    r();
+                    break;
+                case 'R':
+                    R();
+                    break;
+                case 'w':
+                    w();
+                    break;
+                case 'W':
+                    W();
+                    break;
+                case 'z':
+                    z();
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if(str[i] == 'P')
+        {
+            std::string toadd;
+            i++;
+            while(!isalpha(str[i]))
+            {
+                toadd += str[i];
+                i++;
+            }
+            P(stoi(toadd));
+            i--;
+        }
+        else
+        {
+            if (str[i] == '+')
+            {
+                plus();
+            }
+            else if (str[i] == '-')
+            {
+                minus();
+            }
+            else
+            {
+                std::cout << "Probleme dans la formule!!! " << str[i] << std::endl;
+                break;
+            }
+        }
+    }
+    std::cout << "Fini!" << std::endl;
+    return 0;
+}
+
