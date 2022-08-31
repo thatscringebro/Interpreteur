@@ -115,7 +115,7 @@ int main(){
         {
             std::string toadd;
             i++;
-            while(!isalpha(str[i]))
+            while(!isalpha(str[i]) && (str[i] != '+' || str[i] != '-'))
             {
                 toadd += str[i];
                 i++;
