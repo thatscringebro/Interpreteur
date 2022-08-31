@@ -36,7 +36,7 @@ void r(){
     std::string str;
     std::cout << "Veuillez entrer un string: ";
     std::cin >> str;
-    for (size_t i = str.length(); i > 0; i--)
+    for (size_t i = str.length(); i >= 0; i--)
     {
         st.push(str[i]);
     }
