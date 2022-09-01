@@ -36,7 +36,7 @@ void r(){
     std::string str;
     std::cout << "Veuillez entrer un string: ";
     std::cin >> str;
-    for (size_t i = str.length(); i >= 0; i--)
+    for (size_t i = str.length(); i > 0; i--)
     {
         st.push(str[i]);
     }
@@ -115,13 +115,13 @@ int main(){
         {
             std::string toadd;
             i++;
-            while(!isalpha(str[i]) && (str[i] != '+' || str[i] != '-'))
+            while(!isalpha(str[i]) && (str[i] != '+' && str[i] != '-'))
             {
                 toadd += str[i];
                 i++;
             }
-            P(stoi(toadd));
             i--;
+            P(stoi(toadd));
         }
         else
         {
